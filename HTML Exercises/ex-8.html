@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Preferences</title>
+
+    <script>
+
+        function savePreference() {
+            let eventType =
+                document.getElementById("eventType").value;
+
+            localStorage.setItem("preferredEvent", eventType);
+
+            alert("Preference Saved");
+        }
+
+        function loadPreference() {
+            let saved =
+                localStorage.getItem("preferredEvent");
+
+            if (saved) {
+                document.getElementById("eventType").value = saved;
+            }
+        }
+
+        function clearData() {
+            localStorage.clear();
+            sessionStorage.clear();
+
+            alert("Preferences Cleared");
+        }
+
+    </script>
+
+</head>
+
+<body onload="loadPreference()">
+
+    <h2>Preferred Event Selection</h2>
+
+    <select id="eventType">
+        <option>Sports</option>
+        <option>Music</option>
+        <option>Workshop</option>
+        <option>Cultural</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="savePreference()">
+        Save Preference
+    </button>
+
+    <button onclick="clearData()">
+        Clear Preferences
+    </button>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Debugging Example</title>
+
+    <script>
+
+        function calculateTotal() {
+
+            let tickets = 5;
+            let price = 100;
+
+            let total = tickets * price;
+
+            console.log("Tickets =", tickets);
+            console.log("Price =", price);
+            console.log("Total =", total);
+
+            document.getElementById("output").innerHTML =
+                "Total Amount = ₹" + total;
+        }
+
+    </script>
+
+    <style>
+        .box {
+            width: 250px;
+            padding: 20px;
+            background: lightblue;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2 align="center">Debugging Example</h2>
+
+    <div class="box">
+
+        <p>Open Chrome DevTools (F12)</p>
+
+        <button onclick="calculateTotal()">
+            Calculate
+        </button>
+
+        <p id="output"></p>
+
+    </div>
+
+</body>
+
+</html>

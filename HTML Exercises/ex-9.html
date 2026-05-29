@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocation Example</title>
+
+    <script>
+
+        function findLocation() {
+
+            let options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+
+            navigator.geolocation.getCurrentPosition(
+                success,
+                error,
+                options
+            );
+
+            function success(position) {
+
+                document.getElementById("location").innerHTML =
+                    "Latitude: " +
+                    position.coords.latitude +
+                    "<br>Longitude: " +
+                    position.coords.longitude;
+            }
+
+            function error(err) {
+
+                if (err.code == 1)
+                    alert("Permission Denied");
+
+                else if (err.code == 3)
+                    alert("Location Request Timed Out");
+
+                else
+                    alert("Unable to Fetch Location");
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Find Nearby Events</h2>
+
+    <button onclick="findLocation()">
+        Find Nearby Events
+    </button>
+
+    <p id="location"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handling Example</title>
+
+    <script>
+
+        function validatePhone() {
+            let phone = document.getElementById("phone").value;
+
+            if (phone.length != 10 || isNaN(phone))
+                alert("Enter a valid 10 digit phone number");
+        }
+
+        function showFee() {
+            let event = document.getElementById("event").value;
+
+            if (event == "Sports")
+                document.getElementById("fee").innerHTML = "Fee: ₹200";
+            else if (event == "Music")
+                document.getElementById("fee").innerHTML = "Fee: ₹300";
+            else if (event == "Workshop")
+                document.getElementById("fee").innerHTML = "Fee: ₹250";
+        }
+
+        function submitForm() {
+            alert("Feedback Submitted Successfully");
+        }
+
+        function enlargeImage(img) {
+            img.style.width = "300px";
+            img.style.height = "200px";
+        }
+
+        function countCharacters() {
+            let count = document.getElementById("feedback").value.length;
+            document.getElementById("result").innerHTML =
+                "Characters: " + count;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h2>Event Feedback Form</h2>
+
+    Phone Number:
+    <input type="text" id="phone" onblur="validatePhone()">
+
+    <br><br>
+
+    Select Event:
+    <select id="event" onchange="showFee()">
+        <option>Sports</option>
+        <option>Music</option>
+        <option>Workshop</option>
+    </select>
+
+    <p id="fee"></p>
+
+    <img src="https://via.placeholder.com/150" width="150" height="100" ondblclick="enlargeImage(this)">
+
+    <br><br>
+
+    <textarea id="feedback" rows="5" cols="40" onkeyup="countCharacters()"></textarea>
+
+    <p id="result">Characters: 0</p>
+
+    <button onclick="submitForm()">
+        Submit Feedback
+    </button>
+
+</body>
+
+</html>
