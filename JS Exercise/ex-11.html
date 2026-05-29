@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form id="registerForm">
+        <input type="text" name="username" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <select name="event">
+            <option>Music Festival</option>
+            <option>Food Fair</option>
+        </select>
+        <button type="submit">Register</button>
+        <p id="error"></p>
+    </form>
+    <script>
+        document.getElementById("registerForm")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+                const form = event.target;
+                const name = form.elements["username"].value;
+                const email = form.elements["email"].value;
+                if (name === "" || email === "") {
+                    document.getElementById("error").textContent =
+                        "All fields are required";
+                    return;
+                }
+                alert("Registration Successful");
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+</head>
+<body>
+    <div id="eventContainer"></div>
+    <script>
+        const events = [
+            { name: "Music Festival" },
+            { name: "Food Carnival" }
+        ];
+        const container = document.querySelector("#eventContainer");
+        events.forEach(event => {
+            const card = document.createElement("div");
+            card.textContent = event.name;
+            container.appendChild(card);
+        });
+        function registerEvent() {
+            container.innerHTML += "<p>Registration Successful</p>";
+        }
+        function cancelEvent() {
+            container.innerHTML += "<p>Registration Cancelled</p>";
+        }
+    </script>
+</body>
+</html>

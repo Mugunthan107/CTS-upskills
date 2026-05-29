@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="registerBtn">Register</button>
+    <select id="category">
+        <option>Music</option>
+        <option>Sports</option>
+    </select>
+    <input type="text" id="searchBox" placeholder="Search Event">
+    <script>
+        document.getElementById("registerBtn").onclick = function () {
+            alert("Registered Successfully");
+        };
+        document.getElementById("category").onchange = function () {
+            console.log(this.value);
+        };
+        document.getElementById("searchBox").addEventListener(
+            "keydown",
+            function (event) {
+                console.log(event.key);
+            }
+        );
+    </script>
+</body>
+</html>
